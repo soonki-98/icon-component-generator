@@ -16,6 +16,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<any>) => {
     const indexFilePath = path.join(...defaultPath, "index.ts");
     const indexFile = fs.readFileSync(indexFilePath, { encoding: "utf-8" });
 
+    const files = fs.readdirSync(defaultPath[0] + "/" + defaultPath[1]);
+
+    for (const file of files) {
+      if (file.replace(".tsx", "").toLowerCase() === fileName.toLowerCase()) {
+        res.status(400);
+        res.send({
+          status: 400,
+          success: false,
+          message: `${fileName} is already exist`,
+        });
+        return;
+      }
+    }
+
     const result = await transform(
       svg,
       {

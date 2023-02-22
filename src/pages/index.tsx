@@ -13,10 +13,12 @@ export default function Home() {
     reader.readAsText(file, "UTF-8");
 
     reader.onload = async (e) => {
-      await axios.post("/api/icon", {
-        svg: e.target?.result as string,
-        fileName: file.name.replace(".svg", ""),
-      });
+      await axios
+        .post("/api/icon", {
+          svg: e.target?.result as string,
+          fileName: file.name.replace(".svg", ""),
+        })
+        .catch((err) => alert(err.response.data.message));
       setIsLoading(false);
     };
   };
