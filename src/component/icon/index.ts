@@ -1,5 +1,1 @@
-export { default as Close } from './close'
-export { default as Comment } from './comment'
-export { default as Document } from './document'
-export { default as Documentallreturn } from './documentallreturn'
-export { default as DropArrow } from './drop-arrow'
+export { default as Butterfly } from "./butterfly";
