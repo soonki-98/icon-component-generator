@@ -1,42 +1,28 @@
 import React, { useRef, useState } from "react";
-import axios from "axios";
 
 import * as L from "../component/layout";
 import * as Icons from "../component/icon";
+import uploadSVG from "@utils/uploadSVG";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const handleDocumentUpload = (file: File) => {
-    const reader = new FileReader();
-    reader.readAsText(file, "UTF-8");
-
-    reader.onload = async (e) => {
-      await axios
-        .post("/api/icon", {
-          svg: e.target?.result as string,
-          fileName: file.name.replace(".svg", ""),
-        })
-        .catch((err) => alert(err.response.data.message));
-      setIsLoading(false);
-    };
-  };
-
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsLoading(true);
+  const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
-      handleDocumentUpload(file);
-    }
-
+    if (!file) return;
+    setIsLoading(true);
+    const result = await uploadSVG(file);
+    setIsLoading(false);
+    console.log(result);
     if (fileRef && fileRef.current) {
       fileRef.current.value = "";
     }
   };
+
   return (
     <L.Home>
-      <input type="file" accept=".svg" onChange={handleFileUpload} ref={fileRef} />
+      <input type="file" accept=".svg" onChange={handleChange} ref={fileRef} />
       <L.Icon>
         {Object.values(Icons).map((Icon, index) => (
           <Icon color="#fff" size={50} key={index} />
