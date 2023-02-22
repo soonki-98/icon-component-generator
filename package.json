@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:svg": "svgr --out-dir ./src/component/icon --filename-case kebab --typescript ./src/assets/icons"
+    "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/template": "^7.20.7",
     "@next/font": "13.1.6",
     "@svgr/babel-plugin-svg-dynamic-title": "^6.5.1",
     "@svgr/cli": "^6.5.1",
@@ -17,6 +18,7 @@
     "@svgr/plugin-jsx": "^6.5.1",
     "@svgr/plugin-prettier": "^6.5.1",
     "@types/axios": "^0.14.0",
+    "@types/babel__core": "^7.20.0",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
