@@ -1,1 +1,1 @@
-export { default as Butterfly } from "./butterfly";
+export { default as Butterfly } from "./Butterfly";
