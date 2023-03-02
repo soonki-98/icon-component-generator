@@ -1,5 +1,10 @@
 # SVG-Icon Component Generator
 
+## Example
+
+https://user-images.githubusercontent.com/63432381/222455652-3fb60c00-b827-482b-bcf6-36bcf905755b.mov
+
+
 ## How to Use?
 
 ### STEP 1
