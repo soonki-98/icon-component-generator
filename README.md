@@ -1,19 +1,19 @@
 # SVG-Icon Component Generator
 
-## Example
+## 🎥 Example
 
 https://user-images.githubusercontent.com/63432381/222455652-3fb60c00-b827-482b-bcf6-36bcf905755b.mov
 
 
 ## How to Use?
 
-### STEP 1
+### STEP 1️⃣
 Clone this repository with below command.
 ```linux
 git clone https://github.com/soonki-98/icon-component-generator.git
 ```
 
-### STEP2
+### STEP 2️⃣
 Install dependencies
 ```linux
 npm install
@@ -23,7 +23,7 @@ or
 pnpm install
 ```
 
-### STEP3
+### STEP 3️⃣
 Run generator
 ```linux
 npm run dev
@@ -33,13 +33,13 @@ or
 pnpm run dev
 ```
 
-### STEP4
+### STEP 4️⃣
 Input icon which it's extension is `.svg`
 
-### STEP5
+### STEP 5️⃣
 Now react component generated at `src/components/icons`
 
-### STEP6
-If you want generate react component to another directory, than change the code in `src/pages/api/icon`
+### STEP 6️⃣
+If you want generate react component to another directory, than change the code in `src/pages/api/icon` <br/>
 (This will be added as new feature)
 
