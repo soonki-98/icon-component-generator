@@ -18,29 +18,19 @@ const propTypesTemplate = ({ componentName, props, jsx }: TemplateVariables, { t
   return tpl` 
 import React from 'react'
 import { IconProps } from "./type";
+
 const ${componentName} = ({
 	size,
-	title,
-	desc,
-	titleId,
-	descId,
 	...props
   }: IconProps) => { 
-	let ariaLabelledBy = titleId ? titleId : ''
-	ariaLabelledBy += desc && descId ? \` \${descId}\` : ''
-	ariaLabelledBy = ariaLabelledBy ? ariaLabelledBy : ''
-	props['aria-labelledby'] = ariaLabelledBy
 	props.style = { outline: "none" , width: size, height: size } 
 	return (${jsx})
   }
-
-  ${componentName}.isIcon = true
+ 
   ${componentName}.defaultProps = {
 	size: 24,
-	focusable: false,
-	'aria-hidden': true,
-	role: 'img'
   }
+
   export default ${componentName}`;
 };
 
