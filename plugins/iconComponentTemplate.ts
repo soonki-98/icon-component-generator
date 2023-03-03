@@ -14,7 +14,7 @@ interface TemplateContext {
   tpl: TemplateBuilder<types.Statement | types.Statement[]>["ast"];
 }
 
-const propTypesTemplate = ({ componentName, props, jsx }: TemplateVariables, { tpl }: TemplateContext) => {
+const iconComponentTemplate = ({ componentName, props, jsx }: TemplateVariables, { tpl }: TemplateContext) => {
   return tpl` 
 import React from 'react'
 import { IconProps } from "./type";
@@ -34,4 +34,4 @@ const ${componentName} = ({
   export default ${componentName}`;
 };
 
-export default propTypesTemplate;
+export default iconComponentTemplate;

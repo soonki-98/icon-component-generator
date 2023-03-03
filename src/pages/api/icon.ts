@@ -4,7 +4,7 @@ import path from "path";
 import { transform } from "@svgr/core";
 
 import capitalize from "@utils/capitalize";
-import propTypesTemplate from "plugins/propsTypesTemplate";
+import iconComponentTemplate from "plugins/iconComponentTemplate";
 
 const checkDuplication = (existComponentList: string[], componentName: string) => {
   let isDuplicated = false;
@@ -51,7 +51,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<any>) => {
       {
         plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx", "@svgr/plugin-prettier"],
         icon: true,
-        template: propTypesTemplate,
+        template: iconComponentTemplate,
         typescript: true,
       },
       { componentName }
