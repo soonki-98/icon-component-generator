@@ -37,9 +37,5 @@ pnpm run dev
 Input icon which it's extension is `.svg`
 
 ### STEP 5️⃣
-Now react component generated at `src/components/icons`
-
-### STEP 6️⃣
-If you want generate react component to another directory, than change the code in `src/pages/api/icon` <br/>
-(This will be added as new feature)
+Now react component generated!
 
